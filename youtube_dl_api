@@ -18,8 +18,8 @@ TOKEN="$(cat /data/token.txt)"
 EXTHOST="https://hughscloud.com:$PORT"
 FORMAT="%(title)s - %(uploader)s - %(id)s.%(ext)s"
 
-command="/usr/local/bin/python"
-command_args="/data/youtube-dl-api/youtube-dl-api.py > $logfile 2>&1"
+command="/usr/sbin/daemon"
+command_args="-u media -o $logfile /usr/local/bin/python /data/youtube-dl-api/youtube-dl-api.py"
 
 
 
