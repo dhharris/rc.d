@@ -1,0 +1,25 @@
+#! /bin/sh
+#
+
+# PROVIDE: doom
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="doom"
+rcvar="doom_enable"
+
+: ${doom_enable:="NO"}
+
+doom_chdir="/home/hugh/odamex-src-0.8.3"
+wad_dir="/home/hugh/wad"
+logfile="/var/log/${name}.log"
+WAD="-file ${wad_dir}/DWANGO5.WAD"
+
+command="/usr/sbin/daemon"
+command_args="-u hugh -o ${logfile} ${doom_chdir}/server/odasrv -iwad ${wad_dir}/DOOM2.WAD -config /home/hugh/.odamex/dm-doom.cfg"
+
+
+
+load_rc_config $name
+run_rc_command "$1"
