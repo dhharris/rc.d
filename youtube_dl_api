@@ -1,0 +1,27 @@
+#! /bin/sh
+#
+
+# PROVIDE: youtube_dl_api
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="youtube_dl_api"
+rcvar="youtube_dl_api_enable"
+
+: ${youtube_dl_api_enable:="NO"}
+
+logfile="/var/log/${name}.log"
+# Set up environment
+PORT=9835  # YTDL
+TOKEN="$(cat /data/token.txt)"
+EXTHOST="https://hughscloud.com:$PORT"
+FORMAT="%(title)s - %(uploader)s - %(id)s.%(ext)s"
+
+command="/usr/local/bin/python"
+command_args="/usr/local/bin/youtube-dl-api/youtube-dl-api.py > $logfile 2>&1"
+
+
+
+load_rc_config $name
+run_rc_command "$1"
