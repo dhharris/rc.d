@@ -19,7 +19,7 @@ EXTHOST="https://hughscloud.com:$PORT"
 FORMAT="%(title)s - %(uploader)s - %(id)s.%(ext)s"
 
 command="/usr/sbin/daemon"
-command_args="-u media -o $logfile /usr/local/bin/python /data/youtube-dl-api/youtube-dl-api.py"
+command_args="-o $logfile /usr/local/bin/python /data/youtube-dl-api/youtube-dl-api.py"
 
 
 
