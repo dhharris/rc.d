@@ -13,10 +13,10 @@ rcvar="youtube_dl_api_enable"
 
 logfile="/var/log/${name}.log"
 # Set up environment
-PORT=9835  # YTDL
-TOKEN="$(cat /data/token.txt)"
-EXTHOST="https://hughscloud.com:$PORT"
-FORMAT="%(title)s - %(uploader)s - %(id)s.%(ext)s"
+export PORT=9835  # YTDL
+export TOKEN="$(cat /data/token.txt)"
+export EXTHOST="https://hughscloud.com:$PORT"
+export FORMAT="%(title)s - %(uploader)s - %(id)s.%(ext)s"
 
 command="/usr/sbin/daemon"
 command_args="-o $logfile /usr/local/bin/python /data/youtube-dl-api/youtube-dl-api.py"
