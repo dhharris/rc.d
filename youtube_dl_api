@@ -17,6 +17,7 @@ export PORT=9835  # YTDL
 export TOKEN="$(cat /data/token.txt)"
 export EXTHOST="http://hughscloud.com:$PORT"
 export FORMAT="%(title)s - %(uploader)s - %(id)s.%(ext)s"
+export PATH="${PATH}:/usr/local/bin"
 
 command="/usr/sbin/daemon"
 command_args="-o $logfile /usr/local/bin/python /data/youtube-dl-api/youtube-dl-api.py"
