@@ -15,7 +15,7 @@ logfile="/var/log/${name}.log"
 # Set up environment
 export PORT=9835  # YTDL
 export TOKEN="$(cat /data/token.txt)"
-export EXTHOST="https://hughscloud.com:$PORT"
+export EXTHOST="http://hughscloud.com:$PORT"
 export FORMAT="%(title)s - %(uploader)s - %(id)s.%(ext)s"
 
 command="/usr/sbin/daemon"
